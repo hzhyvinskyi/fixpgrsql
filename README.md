@@ -1,1 +1,1 @@
-# fixpgrsql
+# script
