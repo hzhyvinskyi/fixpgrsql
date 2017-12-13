@@ -17,5 +17,3 @@ function smallestDivisor($num)
 
     return $smd($num, 2);
 }
-
-echo smallestDivisor(11);
