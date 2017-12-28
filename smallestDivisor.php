@@ -2,7 +2,7 @@
 
 function smallestDivisor($num)
 {
-    $smd = function($num, $acc) use (&$smd)
+    $sdiv = function($num, $acc) use (&$sdiv)
     {
         if ($num <= $acc) {
             return $num;
@@ -12,8 +12,8 @@ function smallestDivisor($num)
             return $acc;
         }
 
-        return $smd($num, $acc + 1);
+        return $sdiv($num, $acc + 1);
     };
 
-    return $smd($num, 2);
+    return $sdiv($num, 2);
 }
