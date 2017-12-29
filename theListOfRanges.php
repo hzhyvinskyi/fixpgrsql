@@ -25,6 +25,6 @@ function summaryRanges($array)
             $result[] = "$firstValue->{$array[$index]}";
         }
     }
-
+    
     return $result;
   }
