@@ -1,1 +1,1 @@
-# php scripts
+# scripts
