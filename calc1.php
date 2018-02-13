@@ -22,4 +22,4 @@ function calc($num1, $num2, $action = '+') {
     }
 }
 
-echo calc(10, 3, '/');
+echo calc(16, 5, '/');
