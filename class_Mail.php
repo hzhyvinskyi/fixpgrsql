@@ -4,8 +4,8 @@ mail('to whom', 'subject', 'text');
 
 class Mail {
     static $subject = 'default';
-    static $from = 'qoakjwetkjl@mydomain.com';
-    static $to = 'oijawtwaptm@gmail.com';
+    static $from = 'admin@mydomain.com';
+    static $to = 'examplemail@gmail.com';
     static $text = 'template letter';
     static $headers = '';
 
