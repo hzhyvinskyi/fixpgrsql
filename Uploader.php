@@ -1,9 +1,9 @@
-class Uploader 
+class Uploader
 {
     private $array = array('image/jpg', 'image/jpeg', 'image/png', 'image/gif');
     private $array2 = array('jpg', 'jpeg', 'png', 'gif');
 
-    public function uploadImg($files) 
+    public function uploadImg($files)
     {
         if ($files['file']['error'] != 0) {
             return 'Вы не загрузили изображение';
