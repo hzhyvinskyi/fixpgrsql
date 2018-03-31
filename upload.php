@@ -1,8 +1,10 @@
-class Uploader {
-    static $array = array('image/jpg', 'image/jpeg', 'image/png', 'image/gif');
-    static $array2 = array('jpg', 'jpeg', 'png', 'gif');
+class Uploader 
+{
+    private $array = array('image/jpg', 'image/jpeg', 'image/png', 'image/gif');
+    private $array2 = array('jpg', 'jpeg', 'png', 'gif');
 
-    function uploadImg($files) {
+    public function uploadImg($files) 
+    {
         if ($files['file']['error'] != 0) {
             return 'Вы не загрузили изображение';
         } elseif ($files['file']['size'] < 5000 || $files['file']['size'] > 50000000) {
@@ -19,9 +21,9 @@ class Uploader {
 
                 $name = '/uploaded/'.date('Ymd-His').'image'.rand(10000, 99999).'.'.$matches[1];
 
-                if (!in_array($matches[1], self::$array2)) {
+                if (!in_array($matches[1], $this->array2)) {
                     return 'Не подходит формат изображения';
-                } elseif (!in_array($temp['mime'], self::$array)) {
+                } elseif (!in_array($temp['mime'], $this->array)) {
                     return 'Не подходит тип файла, можно загружать только изображения';
                 } elseif (!move_uploaded_file($files['file']['tmp_name'], '.'.$name)) {
                     return 'Изображение не загружено';
