@@ -27,11 +27,13 @@ class CartController
 			if (!count($errors)) {
 				$productInCart = Cart::getProducts();
 				
-				if (!isGuest() {
+				if (isGuest() {
+					$userId = false;
+				} else {
 					$userId = User::checkLogged();
 				}
 				
-				$result = Order::save($name, $email, $phone, $comment, $productInCart);
+				$result = Order::save($name, $email, $phone, $comment, $userId $productInCart);
 				
 				if ($result) {
 					$adminEmail = 'Hzhyvinskyi@gmail.com';
