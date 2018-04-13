@@ -6,14 +6,14 @@ class Uploader
     public function uploadImg($files)
     {
         if ($files['file']['error'] != 0) {
-            return 'Вы не загрузили изображение';
+            return 'You didn\'t upload image';
         } elseif ($files['file']['size'] < 5000 || $files['file']['size'] > 50000000) {
-            return 'Не подходит размер изображения';
+            return 'Image wasn\'t uploaded';
         } else {
             preg_match('#\.(jpe?g|png|gif)$#ui', $files['file']['name'], $matches);
 
             if (!isset($matches[1])) {
-                return 'Принимаются только форматы: jpg, jpeg, png, gif';
+                return 'Allowed formats: jpg, jpeg, png, gif';
             } else {
                 $matches[1] = mb_strtolower($matches[1]);
 
@@ -22,11 +22,11 @@ class Uploader
                 $name = '/uploaded/'.date('Ymd-His').'image'.rand(10000, 99999).'.'.$matches[1];
 
                 if (!in_array($matches[1], $this->array2)) {
-                    return 'Не подходит формат изображения';
+                    return 'Incorrect image format';
                 } elseif (!in_array($temp['mime'], $this->array)) {
-                    return 'Не подходит тип файла, можно загружать только изображения';
+                    return 'Incorrect file type. Allowed only image';
                 } elseif (!move_uploaded_file($files['file']['tmp_name'], '.'.$name)) {
-                    return 'Изображение не загружено';
+                    return 'Image wasn\'t uploaded';
                 } else {
                     return $name;
                 }
