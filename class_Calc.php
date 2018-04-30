@@ -1,11 +1,13 @@
 <?php
 
-class Calc {
+class Calc
+{
     static $num1 = '';
     static $num2 = '';
     static $action = '+';
 
-    static function act() {
+    public static function act() 
+    {
         if (!is_numeric(self::$num1) || !is_numeric(self::$num2)) {
             return 'Numbers were typed incorrectly';
         }
