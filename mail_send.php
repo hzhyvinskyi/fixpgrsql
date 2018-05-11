@@ -11,8 +11,8 @@ $check = implode (', ', $check );
 $radio = htmlspecialchars($_POST["radio"]);
 
 $refferer = getenv('HTTP_REFERER');
-$date=date("d.m.y"); // число.месяц.год  
-$time=date("H:i"); // часы:минуты:секунды 
+$date=date("d.m.y"); 
+$time=date("H:i");
 $myemail = "funfot@ya.ru";
 
 $subject = "Тема письма админу";
